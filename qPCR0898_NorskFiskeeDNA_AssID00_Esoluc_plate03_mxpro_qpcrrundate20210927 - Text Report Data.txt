@@ -1,0 +1,97 @@
+Well	Well Name	Well Type	Replicate	Threshold (dRn)	Ct (dRn)	Quantity (copies)	RSq (dRn)	Slope (dRn)	
+A1	01_3E4_3uL_  Qty or ID	Standard	1	0.1317	24.61	3.00e+004	0.997	-3.604	
+A2	01_3E4_3uL_  Qty or ID	Standard	1	0.1317	24.71	3.00e+004	0.997	-3.604	
+A3	01_3E4_3uL_  Qty or ID	Standard	1	0.1317	24.68	3.00e+004	0.997	-3.604	
+B1	02_3E3_3uL_  Qty or ID	Standard	2	0.1317	28.41	3.00e+003	0.997	-3.604	
+B2	02_3E3_3uL_  Qty or ID	Standard	2	0.1317	28.18	3.00e+003	0.997	-3.604	
+B3	02_3E3_3uL_  Qty or ID	Standard	2	0.1317	28.24	3.00e+003	0.997	-3.604	
+C1	03_3E2_3uL_  Qty or ID	Standard	3	0.1317	31.74	3.00e+002	0.997	-3.604	
+C2	03_3E2_3uL_  Qty or ID	Standard	3	0.1317	31.98	3.00e+002	0.997	-3.604	
+C3	03_3E2_3uL_  Qty or ID	Standard	3	0.1317	31.65	3.00e+002	0.997	-3.604	
+D1	04_3E1_3uL_  Qty or ID	Standard	4	0.1317	35.45	3.00e+001	0.997	-3.604	
+D2	04_3E1_3uL_  Qty or ID	Standard	4	0.1317	36.19	3.00e+001	0.997	-3.604	
+D3	04_3E1_3uL_  Qty or ID	Standard	4	0.1317	35.27	3.00e+001	0.997	-3.604	
+E1	05_3E0_3uL_  Qty or ID	Standard	5	0.1317	No Ct	No Ct	0.997	-3.604	
+E2	05_3E0_3uL_  Qty or ID	Standard	5	0.1317	38.60	3.00e+000	0.997	-3.604	
+E3	05_3E0_3uL_  Qty or ID	Standard	5	0.1317	39.35	3.00e+000	0.997	-3.604	
+F1	06_3E-1_3uL_  Qty or ID	Standard	6	0.1317	No Ct	No Ct	0.997	-3.604	
+F2	06_3E-1_3uL_  Qty or ID	Standard	6	0.1317	No Ct	No Ct	0.997	-3.604	
+F3	06_3E-1_3uL_  Qty or ID	Standard	6	0.1317	No Ct	No Ct	0.997	-3.604	
+G1	07_3E-2_3uL_  Qty or ID	Standard	7	0.1317	No Ct	No Ct	0.997	-3.604	
+G2	07_3E-2_3uL_  Qty or ID	Standard	7	0.1317	No Ct	No Ct	0.997	-3.604	
+G3	07_3E-2_3uL_  Qty or ID	Standard	7	0.1317	No Ct	No Ct	0.997	-3.604	
+H1	08_NTC_3uL_  Qty or ID	NTC	8	0.1317	No Ct	No Ct	0.997	-3.604	
+H2	08_NTC_3uL_  Qty or ID	NTC	8	0.1317	No Ct	No Ct	0.997	-3.604	
+H3	08_NTC_3uL_  Qty or ID	NTC	8	0.1317	No Ct	No Ct	0.997	-3.604	
+A4	09_FNE025_3uL_  Qty or ID	Unknown	9	0.1317	No Ct	No Ct	0.997	-3.604	
+A5	09_FNE025_3uL_  Qty or ID	Unknown	9	0.1317	No Ct	No Ct	0.997	-3.604	
+A6	09_FNE025_3uL_  Qty or ID	Unknown	9	0.1317	No Ct	No Ct	0.997	-3.604	
+A7	17_FNE025_3uL_  Qty or ID	Unknown	9	0.1317	No Ct	No Ct	0.997	-3.604	
+A8	17_FNE025_3uL_  Qty or ID	Unknown	9	0.1317	No Ct	No Ct	0.997	-3.604	
+A9	17_FNE025_3uL_  Qty or ID	Unknown	9	0.1317	39.19	2.80	0.997	-3.604	
+B4	10_FNE026_3uL_  Qty or ID	Unknown	10	0.1317	No Ct	No Ct	0.997	-3.604	
+B5	10_FNE026_3uL_  Qty or ID	Unknown	10	0.1317	No Ct	No Ct	0.997	-3.604	
+B6	10_FNE026_3uL_  Qty or ID	Unknown	10	0.1317	No Ct	No Ct	0.997	-3.604	
+B7	18_FNE026_3uL_  Qty or ID	Unknown	10	0.1317	No Ct	No Ct	0.997	-3.604	
+B8	18_FNE026_3uL_  Qty or ID	Unknown	10	0.1317	No Ct	No Ct	0.997	-3.604	
+B9	18_FNE026_3uL_  Qty or ID	Unknown	10	0.1317	No Ct	No Ct	0.997	-3.604	
+C4	11_FNE027_3uL_  Qty or ID	Unknown	11	0.1317	No Ct	No Ct	0.997	-3.604	
+C5	11_FNE027_3uL_  Qty or ID	Unknown	11	0.1317	No Ct	No Ct	0.997	-3.604	
+C6	11_FNE027_3uL_  Qty or ID	Unknown	11	0.1317	No Ct	No Ct	0.997	-3.604	
+C7	19_FNE027_3uL_  Qty or ID	Unknown	11	0.1317	No Ct	No Ct	0.997	-3.604	
+C8	19_FNE027_3uL_  Qty or ID	Unknown	11	0.1317	No Ct	No Ct	0.997	-3.604	
+C9	19_FNE027_3uL_  Qty or ID	Unknown	11	0.1317	No Ct	No Ct	0.997	-3.604	
+D4	12_FNE030_3uL_  Qty or ID	Unknown	12	0.1317	27.00	6.771e+003	0.997	-3.604	
+D5	12_FNE030_3uL_  Qty or ID	Unknown	12	0.1317	27.61	4.577e+003	0.997	-3.604	
+D6	12_FNE030_3uL_  Qty or ID	Unknown	12	0.1317	27.45	5.058e+003	0.997	-3.604	
+D7	20_FNE030_3uL_  Qty or ID	Unknown	12	0.1317	27.40	5.221e+003	0.997	-3.604	
+D8	20_FNE030_3uL_  Qty or ID	Unknown	12	0.1317	27.43	5.125e+003	0.997	-3.604	
+D9	20_FNE030_3uL_  Qty or ID	Unknown	12	0.1317	27.33	5.472e+003	0.997	-3.604	
+E4	13_FNE031_3uL_  Qty or ID	Unknown	13	0.1317	27.06	6.511e+003	0.997	-3.604	
+E5	13_FNE031_3uL_  Qty or ID	Unknown	13	0.1317	27.28	5.649e+003	0.997	-3.604	
+E6	13_FNE031_3uL_  Qty or ID	Unknown	13	0.1317	27.20	5.953e+003	0.997	-3.604	
+E7	21_FNE031_3uL_  Qty or ID	Unknown	13	0.1317	27.39	5.276e+003	0.997	-3.604	
+E8	21_FNE031_3uL_  Qty or ID	Unknown	13	0.1317	27.27	5.687e+003	0.997	-3.604	
+E9	21_FNE031_3uL_  Qty or ID	Unknown	13	0.1317	27.26	5.715e+003	0.997	-3.604	
+F4	14_FNE032_3uL_  Qty or ID	Unknown	14	0.1317	26.43	9.722e+003	0.997	-3.604	
+F5	14_FNE032_3uL_  Qty or ID	Unknown	14	0.1317	26.64	8.531e+003	0.997	-3.604	
+F6	14_FNE032_3uL_  Qty or ID	Unknown	14	0.1317	26.82	7.578e+003	0.997	-3.604	
+F7	22_FNE032_3uL_  Qty or ID	Unknown	14	0.1317	26.73	8.015e+003	0.997	-3.604	
+F8	22_FNE032_3uL_  Qty or ID	Unknown	14	0.1317	26.65	8.458e+003	0.997	-3.604	
+F9	22_FNE032_3uL_  Qty or ID	Unknown	14	0.1317	26.58	8.862e+003	0.997	-3.604	
+G4	15_FNE033_3uL_  Qty or ID	Unknown	15	0.1317	26.76	7.882e+003	0.997	-3.604	
+G5	15_FNE033_3uL_  Qty or ID	Unknown	15	0.1317	26.76	7.885e+003	0.997	-3.604	
+G6	15_FNE033_3uL_  Qty or ID	Unknown	15	0.1317	26.98	6.850e+003	0.997	-3.604	
+G7	23_FNE033_3uL_  Qty or ID	Unknown	15	0.1317	26.93	7.078e+003	0.997	-3.604	
+G8	23_FNE033_3uL_  Qty or ID	Unknown	15	0.1317	26.99	6.784e+003	0.997	-3.604	
+G9	23_FNE033_3uL_  Qty or ID	Unknown	15	0.1317	26.99	6.787e+003	0.997	-3.604	
+H4	16_FNE034_3uL_  Qty or ID	Unknown	16	0.1317	26.62	8.608e+003	0.997	-3.604	
+H5	16_FNE034_3uL_  Qty or ID	Unknown	16	0.1317	26.61	8.675e+003	0.997	-3.604	
+H6	16_FNE034_3uL_  Qty or ID	Unknown	16	0.1317	26.64	8.523e+003	0.997	-3.604	
+H7	24_FNE034_3uL_  Qty or ID	Unknown	16	0.1317	26.59	8.788e+003	0.997	-3.604	
+H8	24_FNE034_3uL_  Qty or ID	Unknown	16	0.1317	26.63	8.576e+003	0.997	-3.604	
+H9	24_FNE034_3uL_  Qty or ID	Unknown	16	0.1317	26.73	8.019e+003	0.997	-3.604	
+A10	17_FNE035_3uL_  Qty or ID	Unknown	17	0.1317	26.11	1.195e+004	0.997	-3.604	
+A11	17_FNE035_3uL_  Qty or ID	Unknown	17	0.1317	25.90	1.362e+004	0.997	-3.604	
+A12	17_FNE035_3uL_  Qty or ID	Unknown	17	0.1317	26.57	8.906e+003	0.997	-3.604	
+B10	18_FNE036_3uL_  Qty or ID	Unknown	18	0.1317	No Ct	No Ct	0.997	-3.604	
+B11	18_FNE036_3uL_  Qty or ID	Unknown	18	0.1317	No Ct	No Ct	0.997	-3.604	
+B12	18_FNE036_3uL_  Qty or ID	Unknown	18	0.1317	No Ct	No Ct	0.997	-3.604	
+C10	19_FNE037_3uL_  Qty or ID	Unknown	19	0.1317	No Ct	No Ct	0.997	-3.604	
+C11	19_FNE037_3uL_  Qty or ID	Unknown	19	0.1317	No Ct	No Ct	0.997	-3.604	
+C12	19_FNE037_3uL_  Qty or ID	Unknown	19	0.1317	No Ct	No Ct	0.997	-3.604	
+D10	20_FNE038_3uL_  Qty or ID	Unknown	20	0.1317	No Ct	No Ct	0.997	-3.604	
+D11	20_FNE038_3uL_  Qty or ID	Unknown	20	0.1317	No Ct	No Ct	0.997	-3.604	
+D12	20_FNE038_3uL_  Qty or ID	Unknown	20	0.1317	No Ct	No Ct	0.997	-3.604	
+E10	21_FNE039_3uL_  Qty or ID	Unknown	21	0.1317	No Ct	No Ct	0.997	-3.604	
+E11	21_FNE039_3uL_  Qty or ID	Unknown	21	0.1317	No Ct	No Ct	0.997	-3.604	
+E12	21_FNE039_3uL_  Qty or ID	Unknown	21	0.1317	No Ct	No Ct	0.997	-3.604	
+F10	22_FNE040_3uL_  Qty or ID	Unknown	22	0.1317	No Ct	No Ct	0.997	-3.604	
+F11	22_FNE040_3uL_  Qty or ID	Unknown	22	0.1317	No Ct	No Ct	0.997	-3.604	
+F12	22_FNE040_3uL_  Qty or ID	Unknown	22	0.1317	No Ct	No Ct	0.997	-3.604	
+G10	23_FNE041_3uL_  Qty or ID	Unknown	23	0.1317	No Ct	No Ct	0.997	-3.604	
+G11	23_FNE041_3uL_  Qty or ID	Unknown	23	0.1317	No Ct	No Ct	0.997	-3.604	
+G12	23_FNE041_3uL_  Qty or ID	Unknown	23	0.1317	No Ct	No Ct	0.997	-3.604	
+H10	24_NEK_3uL_  Qty or ID	Unknown	24	0.1317	No Ct	No Ct	0.997	-3.604	
+H11	24_NEK_3uL_  Qty or ID	Unknown	24	0.1317	No Ct	No Ct	0.997	-3.604	
+H12	24_NEK_3uL_  Qty or ID	Unknown	24	0.1317	No Ct	No Ct	0.997	-3.604	
