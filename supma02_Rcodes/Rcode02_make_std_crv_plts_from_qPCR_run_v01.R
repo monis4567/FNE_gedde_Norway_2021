@@ -211,18 +211,14 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
 
 
   
-  ####################################################################################
-  #
-  # prepare std dilution curve plots for each for species
-  #
-  ####################################################################################
+####################################################################################
+#
+# prepare std dilution curve plots for each for species
+#
+####################################################################################
   
   #first get unique species names 
-  #get the unique species names
-  latspecnm <- unique(df_F02$gen_specnm)
-  #latspecnm <- "Bufo_bufo"
-  #latspecnm <- "Bufo_viridis"
-  #latspecnm <- "Bombina_bombina"
+  latspecnm <- unique(df_F02$spcabbr)
   #match the assay number to the data frame with species
   AIfps <- scpnmames$AssayIDNo[match(latspecnm, scpnmames$gen_specnm)]
   #pad with zeros to two characters
@@ -239,10 +235,6 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
   #use the new order of latin species names for producing plots
   latspecnm <- unique(nlspnm$latspecnm)
   #
-  
-  #latspecnm <- "Bufo_bufo"
-  amp <- df_F02
-  #head(amp,3)
   ######################################################################################
   #   make standard curve plots for each species for each season 
   ######################################################################################
@@ -273,7 +265,7 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     no.spc.app.plot <- nlspnm$no.latspc[match(spec.lat, nlspnm$latspecnm)]
     #get the latin species nam without underscore
     spec.lat.no_undersc <- paste(sub('_', ' ', spec.lat))
-    outfilpth <- paste(wd03,"/",(paste("stdcrv_AssID",sbs.AssIDNo,"_",spec.lat,"_",qcprno,".pdf",  sep = "")),sep="")
+    outfilpth <- paste(wd00_wd04,"/",(paste("stdcrv_AssID",sbs.AssIDNo,"_",spec.lat,"_",qcprno,".pdf",  sep = "")),sep="")
     # Exporting PFD files via postscript()           
     pdf(c(outfilpth)
         ,width=(1*1.6*8.2677),height=(1*1.6*2*2.9232))

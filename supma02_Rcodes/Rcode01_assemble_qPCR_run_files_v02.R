@@ -279,7 +279,7 @@ df_M04$qPCRno       <- fnm.spl$X1
 df_M04$ProjectNm    <- fnm.spl$X2
 df_M04$AssIDNo      <- fnm.spl$X3
 df_M04$spcabbr      <- fnm.spl$X4
-df_M04$spcabbr      <- fnm.spl$X5
+df_M04$pltno      <- fnm.spl$X5
 df_M04$qpcrmach     <- fnm.spl$X6
 df_M04$qpcrrundate  <- fnm.spl$X7
 #remove file name column
