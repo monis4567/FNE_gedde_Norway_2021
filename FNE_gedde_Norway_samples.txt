@@ -1,0 +1,40 @@
+sampl_no	Fixated	Type_smpl	buffer_added	protocol	Enzyme_addition	Incubation_temp_and_period	lat	lon	date
+1	ATL	Blank	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+2	ATL	Blank	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+3	ATL	Blank	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+4	ATL	Boette - konsentrat	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+5	ATL	Boette - konsentrat	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+6	ATL	Boette - konsentrat	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+7	ATL	Boette - konsentrat	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+8	ATL	Boette - konsentrat	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+9	ATL	Boette - konsentrat	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+10	0.5 RNA	Boette - konsentrat	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+11	0.5 RNA	Boette - konsentrat	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+12	0.5 RNA	Boette - konsentrat	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+13	1.0 RNA	Boette - konsentrat	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+14	1.0 RNA	Boette - konsentrat	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+15	1.0 RNA	Boette - konsentrat	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+16	ATL	1/100	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+17	ATL	1/100	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+18	ATL	1/100	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+19	ATL	1/100	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+20	ATL	1/100	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+21	ATL	1/100	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+22	0.5 RNA	1/100	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+23	0.5 RNA	1/100	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+24	0.5 RNA	1/100	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+25	1.0 RNA	1/100	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+26	1.0 RNA	1/100	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+27	1.0 RNA	1/100	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+30	ATL	1/1000	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+31	ATL	1/1000	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+32	ATL	1/1000	Tilsette ATL som vanlig referanse	Qiagen etterfoelgende samme protokoll som vanlig	Add ProtK	Incubate at 56C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+33	ATL	1/1000	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+34	ATL	1/1000	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+35	ATL	1/1000	Tilsette ATL som vanlig ekstraheres uten oppvarming	Qiagen uten oppvarming	Add ProtK	Incubate at 22C for minimum 4 hours	59.2523911	10.3321997	28.04.2021
+36	0.5 RNA	1/1000	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+37	0.5 RNA	1/1000	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+38	0.5 RNA	1/1000	Tilsette 1 ml RNAgem hoeyt volum RNAgem 	RNAgem tilsatt 1 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+39	1.0 RNA	1/1000	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+40	1.0 RNA	1/1000	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
+41	1.0 RNA	1/1000	Tilsette 0.5 ml RNAgem lavt volum RNAgem	RNAgem tilsamm 0.5 ml Volcano lysis solution se protokoll under start paa Step 2	None	Incubate at 75C for minimum 15 minutes	59.2523911	10.3321997	28.04.2021
