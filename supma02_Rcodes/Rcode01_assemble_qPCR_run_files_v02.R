@@ -284,8 +284,10 @@ df_M04$qpcrmach     <- fnm.spl$X6
 df_M04$qpcrrundate  <- fnm.spl$X7
 #remove file name column
 df_M04$filename <- NULL
-#head(df_M04)
-?write_csv(df_M04)
+#define output file and path 
+outfl.csv <-  paste(wd00_wd03,"/assmembl_qpcr_runs_FNE.csv",sep="")
+#write the csv file
+write_csv(df_M04,outfl.csv)
 
 #__________________________________________________________________________________________
 # end : part 02 : iterate over all  csv files prepared above
