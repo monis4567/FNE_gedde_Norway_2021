@@ -284,10 +284,19 @@ df_M04$qpcrmach     <- fnm.spl$X6
 df_M04$qpcrrundate  <- fnm.spl$X7
 #remove file name column
 df_M04$filename <- NULL
+
+#split the column with Well.Name
+wllnm.spl <- data.frame(do.call('rbind', strsplit(as.character(df_M04$Well.Name),'_',fixed=TRUE)))
+df_M04$replno   <- wllnm.spl$X1
+df_M04$smplno   <- wllnm.spl$X2
+df_M04$templvol <- wllnm.spl$X3
+#remove unneeded column
+df_M04$Well.Name <-  NULL
 #define output file and path 
 outfl.csv <-  paste(wd00_wd03,"/assmembl_qpcr_runs_FNE.csv",sep="")
 #write the csv file
 write_csv(df_M04,outfl.csv)
+#head(df_M04,12)
 
 #__________________________________________________________________________________________
 # end : part 02 : iterate over all  csv files prepared above
