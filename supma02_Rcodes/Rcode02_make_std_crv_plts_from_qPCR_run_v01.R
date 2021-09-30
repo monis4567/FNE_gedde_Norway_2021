@@ -174,9 +174,25 @@ df_S01 <- read.csv(infile02, header = TRUE, sep = "\t", quote = "\"",
 #pad with zero in front
 #see this website: https://stackoverflow.com/questions/5812493/adding-leading-zeros-using-r
 # to get FNE number
-df_S01$FNEno <- paste("FNE",stringr::str_pad(df_S01$sampl_no, 2, pad = "0"),sep="")
+df_S01$FNEno <- paste("FNE",stringr::str_pad(df_S01$sampl_no, 3, pad = "0"),sep="")
+#replace in column
+df_S01$buffer_added <- gsub("Tilsette ATL som vanlig referanse","add ATL as usual w heat incub",df_S01$buffer_added)
+df_S01$buffer_added <- gsub("Tilsette ATL som vanlig ekstraheres uten oppvarming","add ATL no heat incub",df_S01$buffer_added)
+df_S01$buffer_added <- gsub("Tilsette 1 ml RNAgem hoeyt volum RNAgem ","1.0 mL RNAgem",df_S01$buffer_added)
+df_S01$buffer_added <- gsub("Tilsette 0.5 ml RNAgem lavt volum RNAgem","0.5 mL RNAgem",df_S01$buffer_added)
+#split column
+df_incTm <- data.frame(do.call('rbind', strsplit(as.character(df_S01$Incubation_temp_and_period),' ',fixed=TRUE)))
+# add back to data frame
+df_S01$inctmp <- df_incTm$X3
+df_S01$inctime <- paste(df_incTm$X6,df_incTm$X7,sep="_")
 # copy the original data frame
 df_F02 <- df_F01 
+#match between two data frames
+df_F02$Fixated  <- df_S01$Fixated[match(df_F02$smplno,df_S01$FNEno)]
+df_F02$buffer_added <- df_S01$buffer_added[match(df_F02$smplno,df_S01$FNEno)]
+df_F02$inctmp <- df_S01$inctmp[match(df_F02$smplno,df_S01$FNEno)]
+df_F02$inctime <- df_S01$inctime[match(df_F02$smplno,df_S01$FNEno)]
+
 #replace with gsub in column names
 replc.col.nms <- gsub("[[:punct:]]" ,"",colnames(df_F02))
 #replace the old column names with the new column names
@@ -217,72 +233,44 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
 #
 ####################################################################################
   
-  #first get unique species names 
-  latspecnm <- unique(df_F02$spcabbr)
-  #match the assay number to the data frame with species
-  AIfps <- scpnmames$AssayIDNo[match(latspecnm, scpnmames$gen_specnm)]
-  #pad with zeros to two characters
-  #see this website: https://stackoverflow.com/questions/5812493/adding-leading-zeros-using-r
-  AIfps <- stringr::str_pad(AIfps, 2, pad = "0")
-  #make a new data frame with assay Id No and species
-  nlspnm <- data.frame(AIfps,latspecnm)
-  #reorder by the column 'AssayIDNo'
-  nlspnm<- nlspnm[order(nlspnm$AIfps),]
-  #make a list of numbers for the unique species
-  no.latspc <- seq(1:length(latspecnm))
-  #add a new column with no to use for appendix numbering
-  nlspnm <- cbind(nlspnm, no.latspc) 
-  #use the new order of latin species names for producing plots
-  latspecnm <- unique(nlspnm$latspecnm)
-  #
-  ######################################################################################
-  #   make standard curve plots for each species for each season 
-  ######################################################################################
-  
+#first get unique species names 
+latspecnm <- unique(df_F02$spcabbr)
+
+# identify unique qPCR runs
+ls_qPCRnos <- unique(df_F02$qPCRno)
+######################################################################################
+#   make standard curve plots for each qPCR run
+######################################################################################
+
   ########################################################
   # for loop start here
   ########################################################
-  
-  
-  # loop over all species names in the unique list of species, and make plots. 
-  #Notice that the curly bracket ends after the pdf file is closed
-  for (spec.lat in latspecnm){
-    print(spec.lat)
-    #}
-    
-    #get the Danish commom name
-    #first split the string by the dot
-    #https://stackoverflow.com/questions/33683862/first-entry-from-string-split
-    #and escape the dot w two backslashes
-    latnm <- sapply(strsplit(spec.lat,"\\."), `[`, 1)
-    sbs.dknm <- scpnmames$dk_comnm[match(latnm, scpnmames$gen_specnm)]
-    #get AssIDNo
-    sbs.AssIDNo <- scpnmames$AssayIDNo[match(latnm, scpnmames$gen_specnm)]
-    #see this website: https://stackoverflow.com/questions/5812493/adding-leading-zeros-using-r
-    sbs.AssIDNo <- stringr::str_pad(sbs.AssIDNo, 2, pad = "0")
-    
-    #get the number for the appendix plot number
-    no.spc.app.plot <- nlspnm$no.latspc[match(spec.lat, nlspnm$latspecnm)]
-    #get the latin species nam without underscore
-    spec.lat.no_undersc <- paste(sub('_', ' ', spec.lat))
-    outfilpth <- paste(wd00_wd04,"/",(paste("stdcrv_AssID",sbs.AssIDNo,"_",spec.lat,"_",qcprno,".pdf",  sep = "")),sep="")
+for (q in ls_qPCRnos)
+{
+  print(q)
+}
+#define output file and path
+    outfilpth <- paste(wd00_wd04,"/",(paste("stdcrv_",q,".pdf",  sep = "")),sep="")
     # Exporting PFD files via postscript()           
     pdf(c(outfilpth)
         ,width=(1*1.6*8.2677),height=(1*1.6*2*2.9232))
-    
-    #op <- par(mar = c(5, 4, 0.05, 0.05) + 0.1)
     #op <- par(mfrow=c(2,2), # set number of panes inside the plot - i.e. c(2,2) would make four panes for plots
     op <- par(mfrow=c(1,1), # set number of panes inside the plot - i.e. c(2,2) would make four panes for plots
               oma=c(1,1,0,0), # set outer margin (the margin around the combined plot area) - higher numbers increase the number of lines
               mar=c(5,5,5,5) # set the margin around each individual plot 
     )
-    
     #subset based on variable values, subset by species name and by season
-    sbs.amp <- amp[ which(amp$gen_specnm==spec.lat), ]
+    df_F03 <- df_F02[ which(df_F02$qPCRno==q), ]
     
+    #replace NAs in standard dilution series with zeroes
+    #df_F03$Quantitycopies[is.na(df_F03$Quantitycopies)] <- 0
+    #make the copy numbers numeric
+    df_F03$Quantitycopies <- as.numeric(df_F03$Quantitycopies)
+    #unique(df_F03$qPCRno)
     #identify LOD
-    lod.id.df<-sbs.amp[(sbs.amp$WellType=='Standard'),]
-    
+    lod.id.df<-df_F03[(df_F03$WellType=='Standard'),]
+    #subset to exclude rows that are NA
+    lod.id.df <- lod.id.df[!is.na(lod.id.df$Quantitycopies) , ]
     #test if the LOD is infinite - in case of no standard curve
     if (is.finite(min(lod.id.df$Quantitycopies))==F) {
       print("no_std_crv")
@@ -293,7 +281,7 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     }
     lod.val2 <- lod.val
     #match LOD to Cq value, exclude NAs, and get max Cq value
-    mx.Cq.lod<- max(na.omit(sbs.amp$CtdRn[lod.val==sbs.amp$Quantitycopies]))
+    mx.Cq.lod<- max(na.omit(df_F03$CtdRn[lod.val==df_F03$Quantitycopies]))
     # add to the matrix initiated before the loop started
     # see https://stackoverflow.com/questions/13442461/populating-a-data-frame-in-r-in-a-loop
     #mtrx_Cq_per_spc01[inpfile,] <- runif(2)
@@ -301,7 +289,7 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     
     #identify LOQ
     #limit the dataframe to only well type that equals standard
-    zc<-sbs.amp[(sbs.amp$WellType=='Standard'),]
+    zc<-df_F03[(df_F03$WellType=='Standard'),]
     #count the occurences of dilution steps - i.e. the number of succesful replicates
     #see this webpage: https://www.miskatonic.org/2012/09/24/counting-and-aggregating-r/
     #zd<-count(zc, "WellName")
@@ -320,7 +308,7 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     loq.val2 <- loq.val
     #Conditionally Remove Dataframe Rows with R
     #https://stackoverflow.com/questions/8005154/conditionally-remove-dataframe-rows-with-r
-    sbs.pamp<-sbs.amp[!(sbs.amp$WellType=='Standard' & sbs.amp$Quantitycopies<=5),]
+    df_F04<-df_F03[!(df_F03$WellType=='Standard' & df_F03$Quantitycopies<=5),]
     #__________________# plot1   - triangles________________________________________
     # Exporting EPS files via postscript()
     # postscript(c(paste("plot_qpcr_MONIS3_",sbs.AssIDNo,"_",spec.lat,"_std_dilution_series.eps", sep = "")),
@@ -332,23 +320,23 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     
     
     ##  Create a data frame with eDNA
-    y.sbs.amp <- sbs.amp$CtdRn
-    x.sbs.amp <- sbs.amp$Quantitycopies
-    d.sbs.famp <- data.frame( x.sbs.amp = x.sbs.amp, y.sbs.amp = y.sbs.amp )
+    y.df_F03 <- df_F03$CtdRn
+    x.df_F03 <- df_F03$Quantitycopies
+    df_F05 <- data.frame( x.df_F03 = x.df_F03, y.df_F03 = y.df_F03 )
     
     #subset to only include the standard curve points
     # to infer the efficiency of the assay.
     
-    sbs02_df <- sbs.amp[sbs.amp$WellType=="Standard", ]
+    df_F06 <- df_F03[df_F03$WellType=="Standard", ]
     #calculate the covariance
-    cov_sbs02 <- cov(sbs02_df$CtdRn, sbs02_df$Quantitycopies)
+    cov_df_F06 <- cov(df_F06$CtdRn, df_F06$Quantitycopies)
     #calculate the correlation
-    cor_sbs02 <- cor(-log10(sbs02_df$Quantitycopies), sbs02_df$CtdRn)*100
-    rcor_sbs02 <- round(cor_sbs02, 3)
+    cor_df_F06 <- cor(-log10(df_F06$Quantitycopies), df_F06$CtdRn)*100
+    rcor_df_F06 <- round(cor_df_F06, 3)
     #get( getOption( "device" ) )()
     plot(
-      y.sbs.amp ~ x.sbs.amp,
-      data = d.sbs.famp,
+      y.df_F03 ~ x.df_F03,
+      data = df_F05,
       type = "n",
       log  = "x",
       las=1, # arrange all labels horizontal
@@ -373,10 +361,10 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
       
     )
     #add labels to the points
-    #pos_vector <- rep(3, length(sbs.amp$Harbour))
-    #pos_vector[sbs.amp$Harbour %in% c("Roedby", "Aalborgportland", "KalundborgStatiolHavn")] <- 4
-    #pos_vector[sbs.amp$Harbour %in% c("AalborgHavn")] <- 2
-    #text(x.sbs.amp, y.sbs.amp, labels=sbs.amp$Harbour, cex= 0.8, pos=pos_vector, las=3)
+    #pos_vector <- rep(3, length(df_F03$Harbour))
+    #pos_vector[df_F03$Harbour %in% c("Roedby", "Aalborgportland", "KalundborgStatiolHavn")] <- 4
+    #pos_vector[df_F03$Harbour %in% c("AalborgHavn")] <- 2
+    #text(x.df_F03, y.df_F03, labels=df_F03$Harbour, cex= 0.8, pos=pos_vector, las=3)
     
     ##  Put grid lines on the plot, using a light blue color ("lightsteelblue2").
     # add horizontal lines in grid
@@ -419,20 +407,20 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     #make numbers for the sample type
     #convert NAs to a number 
     # https://stackoverflow.com/questions/27195956/convert-na-into-a-factor-level
-    #sbs.amp.stndnm <- addNA(sbs.amp$Harbour)
-    #col.01<-as.numeric(as.factor(sbs.amp.stndnm))
+    #df_F03.stndnm <- addNA(df_F03$Harbour)
+    #col.01<-as.numeric(as.factor(df_F03.stndnm))
     #make a small dataframe w harbours and standards and numbers assigned, 
     #check that the standard is matched up with the transparent color - currently no 17 or 16 ?
-    #harbourcols <- cbind(sbs.amp.stndnm,col.01,sbs.amp$Harbour)
+    #harbourcols <- cbind(df_F03.stndnm,col.01,df_F03$Harbour)
     #replace the colour for the standard dilution sample type with the transparent colour
     #col.02<-replace(col.01, col.01==16, transp_col)
-    #col.04 <- colforharb$col.02[match(sbs.amp$Harbour.Welltype, colforharb$unHaWT)]
+    #col.04 <- colforharb$col.02[match(df_F03$Harbour.Welltype, colforharb$unHaWT)]
     
     
     ##  Draw the points over the grid lines.
-    points( y.sbs.amp ~ x.sbs.amp, data = d.sbs.famp, 
+    points( y.df_F03 ~ x.df_F03, data = df_F05, 
             pch=c(24), lwd=1, cex=1.8,
-            bg=as.character(sbs.amp$col.06)
+            bg=as.character(df_F03$col.06)
             
     )
     #edit labels on the x-axis
@@ -444,25 +432,25 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     
     
     #estimate a model for each STD subset incl below LOQ
-    sbs.amp$x <- sbs.amp$Quantitycopies
-    sbs.amp$y<- sbs.amp$CtdRn
+    df_F03$x <- df_F03$Quantitycopies
+    df_F03$y<- df_F03$CtdRn
     # calculate the log10 for for the Quantitycopies
-    sbs.amp$log10x <- log10(sbs.amp$Quantitycopies)
+    df_F03$log10x <- log10(df_F03$Quantitycopies)
     #estimate a linear model 
-    logEst.amp_STD <- lm(y~log(x),sbs.amp)
+    logEst.amp_STD <- lm(y~log(x),df_F03)
     # calculate the log10 for for the Quantitycopies
-    sbs.amp$log10x <- log10(sbs.amp$Quantitycopies)
+    df_F03$log10x <- log10(df_F03$Quantitycopies)
     #estimate a linear model 
-    logEst.amp_STD <- lm(y~log(x),sbs.amp)
+    logEst.amp_STD <- lm(y~log(x),df_F03)
     #estimate a linear model for the log10 values
     # to get the slope
-    log10xEst.amp_STD <- lm(y~log10x,sbs.amp)
+    log10xEst.amp_STD <- lm(y~log10x,df_F03)
     
     
     #estimate a model for each STD subset incl below LOQ
-    sbs.amp$x <- sbs.amp$Quantitycopies
-    sbs.amp$y<- sbs.amp$CtdRn
-    logEst.amp_STD <- lm(y~log(x),sbs.amp)
+    df_F03$x <- df_F03$Quantitycopies
+    df_F03$y<- df_F03$CtdRn
+    logEst.amp_STD <- lm(y~log(x),df_F03)
     
     #add log regresion lines to the plot
     with(as.list(coef(logEst.amp_STD)),
@@ -471,10 +459,10 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     
     
     #estimate a model for each STD subset for dilution steps above LOQ
-    ab.loq.sbs.amp<-zh # get the previously limited dataframe from identifying LOQ
-    ab.loq.sbs.amp$x <- ab.loq.sbs.amp$Quantitycopies
-    ab.loq.sbs.amp$y<- ab.loq.sbs.amp$CtdRn
-    logEst.abloqamp_STD <- lm(y~log(x),ab.loq.sbs.amp) #make a linear model
+    ab.loq.df_F03<-zh # get the previously limited dataframe from identifying LOQ
+    ab.loq.df_F03$x <- ab.loq.df_F03$Quantitycopies
+    ab.loq.df_F03$y<- ab.loq.df_F03$CtdRn
+    logEst.abloqamp_STD <- lm(y~log(x),ab.loq.df_F03) #make a linear model
     
     #get the slope to calculate the efficiency
     slo1 <- log10xEst.amp_STD$coefficients[2]
@@ -528,11 +516,11 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     
     # add a legend for colors on points
     legend(1e+7*0.5,49,
-           unique(sbs.amp$WellType),
+           unique(df_F03$WellType),
            pch=c(24),
            bg="white",
            #NOTE!! the hex color numbers must be read as characters to translate into hex colors
-           pt.bg = as.character(unique(sbs.amp$col.06)),
+           pt.bg = as.character(unique(df_F03$col.06)),
            y.intersp= 0.7, cex=0.9)
     
     # add a second legend for types of regression lines
@@ -547,7 +535,7 @@ df_F02$col.06 <- colforwt$col.03[match(df_F02$smplno, colforwt$unWT)]
     # add a third legend for efficiency and R2
     legend(1e+7*0.5,28,
            c(paste("efficiency: ",rEffic," %",sep=""),
-             paste("R2: ",rcor_sbs02,sep=""),
+             paste("R2: ",rcor_df_F06,sep=""),
              paste("equation: y=",slo3,"log(x) +",intc3,sep=""),
              paste("Highest Cq at LOD: ",mx.Cq.lod)),
            #pch=c(24), #uncomment to get triangles on the line in the legend
@@ -679,9 +667,9 @@ for(i in 1:iter){
   amp <- df_F02
   
   #subset based on variable values, subset by species name and by season
-  sbs.amp <- amp[ which(amp$gen_specnm==spec.lat), ]
+  df_F03 <- amp[ which(amp$gen_specnm==spec.lat), ]
   #identify LOD
-  lod.id.df<-sbs.amp[(sbs.amp$WellType=='Standard'),]
+  lod.id.df<-df_F03[(df_F03$WellType=='Standard'),]
   
   #test if the LOD is infinite - in case of no standard curve
   if (is.finite(min(lod.id.df$Quantitycopies))==F) {
@@ -692,31 +680,31 @@ for(i in 1:iter){
     #print(lod.val)
   }
   #find the max Cq at LOD
-  mx.Cq.lod<- max(na.omit(sbs.amp$CtdRn[lod.val==sbs.amp$Quantitycopies]))
+  mx.Cq.lod<- max(na.omit(df_F03$CtdRn[lod.val==df_F03$Quantitycopies]))
   
   #estimate a model for each STD subset incl below LOQ
-  sbs.amp$x <- sbs.amp$Quantitycopies
-  sbs.amp$y<- sbs.amp$CtdRn
-  sbs.amp$log10x <- log10(sbs.amp$Quantitycopies)
+  df_F03$x <- df_F03$Quantitycopies
+  df_F03$y<- df_F03$CtdRn
+  df_F03$log10x <- log10(df_F03$Quantitycopies)
   #estimate a linear model 
-  logEst.amp_STD <- lm(y~log(x),sbs.amp)
+  logEst.amp_STD <- lm(y~log(x),df_F03)
   # calculate the log10 for for the Quantitycopies
-  sbs.amp$log10x <- log10(sbs.amp$Quantitycopies)
+  df_F03$log10x <- log10(df_F03$Quantitycopies)
   #estimate a linear model 
-  logEst.amp_STD <- lm(y~log(x),sbs.amp)
+  logEst.amp_STD <- lm(y~log(x),df_F03)
   #estimate a linear model for the log10 values
   # to get the slope
-  log10xEst.amp_STD <- lm(y~log10x,sbs.amp)
+  log10xEst.amp_STD <- lm(y~log10x,df_F03)
   #estimate a model for each STD subset incl below LOQ
-  sbs.amp$x <- sbs.amp$Quantitycopies
-  sbs.amp$y<- sbs.amp$CtdRn
-  logEst.amp_STD <- lm(y~log(x),sbs.amp)
+  df_F03$x <- df_F03$Quantitycopies
+  df_F03$y<- df_F03$CtdRn
+  logEst.amp_STD <- lm(y~log(x),df_F03)
   
   #estimate a model for each STD subset for dilution steps above LOQ
-  ab.loq.sbs.amp<-zh # get the previously limited dataframe from identifying LOQ
-  ab.loq.sbs.amp$x <- ab.loq.sbs.amp$Quantitycopies
-  ab.loq.sbs.amp$y<- ab.loq.sbs.amp$CtdRn
-  logEst.abloqamp_STD <- lm(y~log(x),ab.loq.sbs.amp) #make a linear model
+  ab.loq.df_F03<-zh # get the previously limited dataframe from identifying LOQ
+  ab.loq.df_F03$x <- ab.loq.df_F03$Quantitycopies
+  ab.loq.df_F03$y<- ab.loq.df_F03$CtdRn
+  logEst.abloqamp_STD <- lm(y~log(x),ab.loq.df_F03) #make a linear model
   #get the slope to calculate the efficiency
   slo1 <- log10xEst.amp_STD$coefficients[2]
   slo2 <- as.numeric(as.character(slo1))
@@ -731,7 +719,7 @@ for(i in 1:iter){
   #find intersection between linear regression and LOD
   intc4<-slo2*(log10(lod.val))+intc2
   intc5 <- round(intc4,3)
-  mx.Cq.lod<- max(na.omit(sbs.amp$CtdRn[lod.val==sbs.amp$Quantitycopies]))
+  mx.Cq.lod<- max(na.omit(df_F03$CtdRn[lod.val==df_F03$Quantitycopies]))
   
   #output[i,] <- runif(2)
   mtrx_spc_LOD.cq01[i,] <- c((as.character(spec.lat)),
@@ -757,16 +745,6 @@ library(tableHTML)
 #see it as an html table
 # see : https://cran.r-project.org/web/packages/tableHTML/vignettes/tableHTML.html
 tableHTML(df_spc_LOD.cq02)
-#exlude rows from the data frame
-df_L2 <- df_spc_LOD.cq02[!df_spc_LOD.cq02$spcnm == "Abramis_brama", ]
-df_L2 <- df_L2[!df_L2$spcnm == "Carassius_carassius", ]
-df_L2 <- df_L2[!df_L2$spcnm == "Emys_orbicularis", ]
-df_L2 <- df_L2[!df_L2$spcnm == "Rutilus_rutilus", ]
-
-df_L2 <- df_L2[!df_L2$spcnm == "Ichthyosaurus_alpestris" | !df_L2$qpcrno == "640", ]
-df_L2 <- df_L2[!df_L2$spcnm == "Rana_temporaria" | !df_L2$qpcrno == "641", ]
-df_L2 <- df_L2[!df_L2$spcnm == "Rana_arvalis" | !df_L2$qpcrno == "646", ]
-df_L2 <- df_L2[!df_L2$spcnm == "Lissotriton_vulgaris" | !df_L2$qpcrno == "646", ]
 # round the amplification factor
 df_L2$amplFact <- round(as.numeric(as.character(df_L2$amplFact)),3)
 df_L2$intc2 <- round(as.numeric(as.character(df_L2$intc2)),3)
@@ -895,13 +873,6 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     #https://stackoverflow.com/questions/4350440/split-data-frame-string-column-into-multiple-columns?noredirect=1&lq=1
     #split into five by underscore as a delimiter
     #unique(df_F02$WellName)
-    df_F02$WellName <- gsub("Bufcal1_02","Bufcal1.02",df_F02$WellName)
-    df_F02$WellName <- gsub("Bufvir3_08","Bufvir3.08",df_F02$WellName)
-    df_F02$WellName <- gsub("Hylarb2_08","Hylarb2.08",df_F02$WellName)
-    
-    df_F02$WellName <- gsub("Tricri_144_06","Tricri.144.06",df_F02$WellName)
-    df_F02$WellName <- gsub("Emyorb_067_01","Emyorb.067.01",df_F02$WellName)
-    df_F02$WellName <- gsub("Randal_065_10","Randal.065.10",df_F02$WellName)
     
     wll.nm.spl01 <- stringr::str_split_fixed(df_F02$WellName, "_", 5)
     #wll.nm.spl01 <- stringr::str_split_fixed(df_F02$WellName, "_", 6)
@@ -1031,10 +1002,10 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     # )
     # 
     #subset based on variable values, subset by species name and by season
-    sbs.amp <- amp[ which(amp$gen_specnm==spec.lat), ]
+    df_F03 <- amp[ which(amp$gen_specnm==spec.lat), ]
     
     #identify LOD
-    lod.id.df<-sbs.amp[(sbs.amp$WellType=='Standard'),]
+    lod.id.df<-df_F03[(df_F03$WellType=='Standard'),]
     
     #test if the LOD is infinite - in case of no standard curve
     if (is.finite(min(lod.id.df$Quantitycopies))==F) {
@@ -1046,7 +1017,7 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     }
     lod.val2 <- lod.val
     #match LOD to Cq value, exclude NAs, and get max Cq value
-    mx.Cq.lod<- max(na.omit(sbs.amp$CtdRn[lod.val==sbs.amp$Quantitycopies]))
+    mx.Cq.lod<- max(na.omit(df_F03$CtdRn[lod.val==df_F03$Quantitycopies]))
     # add to the matrix initiated before the loop started
     # see https://stackoverflow.com/questions/13442461/populating-a-data-frame-in-r-in-a-loop
     #mtrx_Cq_per_spc01[inpfile,] <- runif(2)
@@ -1054,7 +1025,7 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     
     #identify LOQ
     #limit the dataframe to only well type that equals standard
-    zc<-sbs.amp[(sbs.amp$WellType=='Standard'),]
+    zc<-df_F03[(df_F03$WellType=='Standard'),]
     #count the occurences of dilution steps - i.e. the number of succesful replicates
     #see this webpage: https://www.miskatonic.org/2012/09/24/counting-and-aggregating-r/
     #zd<-count(zc, "WellName")
@@ -1073,26 +1044,26 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     loq.val2 <- loq.val
     #Conditionally Remove Dataframe Rows with R
     #https://stackoverflow.com/questions/8005154/conditionally-remove-dataframe-rows-with-r
-    sbs.pamp<-sbs.amp[!(sbs.amp$WellType=='Standard' & sbs.amp$Quantitycopies<=5),]
+    df_F04<-df_F03[!(df_F03$WellType=='Standard' & df_F03$Quantitycopies<=5),]
     #__________________# plot1   - triangles________________________________________
     ##  Create a data frame with eDNA
-    y.sbs.amp <- sbs.amp$CtdRn
-    x.sbs.amp <- sbs.amp$Quantitycopies
-    d.sbs.famp <- data.frame( x.sbs.amp = x.sbs.amp, y.sbs.amp = y.sbs.amp )
+    y.df_F03 <- df_F03$CtdRn
+    x.df_F03 <- df_F03$Quantitycopies
+    df_F05 <- data.frame( x.df_F03 = x.df_F03, y.df_F03 = y.df_F03 )
     
     #subset to only include the standard curve points
     # to infer the efficiency of the assay.
     
-    sbs02_df <- sbs.amp[sbs.amp$WellType=="Standard", ]
+    df_F06 <- df_F03[df_F03$WellType=="Standard", ]
     #calculate the covariance
-    cov_sbs02 <- cov(sbs02_df$CtdRn, sbs02_df$Quantitycopies)
+    cov_df_F06 <- cov(df_F06$CtdRn, df_F06$Quantitycopies)
     #calculate the correlation
-    cor_sbs02 <- cor(-log10(sbs02_df$Quantitycopies), sbs02_df$CtdRn)*100
-    rcor_sbs02 <- round(cor_sbs02, 3)
+    cor_df_F06 <- cor(-log10(df_F06$Quantitycopies), df_F06$CtdRn)*100
+    rcor_df_F06 <- round(cor_df_F06, 3)
     #get( getOption( "device" ) )()
     plot(
-      y.sbs.amp ~ x.sbs.amp,
-      data = d.sbs.famp,
+      y.df_F03 ~ x.df_F03,
+      data = df_F05,
       type = "n",
       log  = "x",
       las=1, # arrange all labels horizontal
@@ -1151,9 +1122,9 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     abline(h=seq(41,100,1000), lty=1, lwd=3, col="darkgray")
     text(10,40.6,"cut-off",col="darkgray",srt=0,pos=3, font=2, cex=1.2)
     ##  Draw the points over the grid lines.
-    points( y.sbs.amp ~ x.sbs.amp, data = d.sbs.famp, 
+    points( y.df_F03 ~ x.df_F03, data = df_F05, 
             pch=c(24), lwd=1, cex=1.8,
-            bg=as.character(sbs.amp$col.06)
+            bg=as.character(df_F03$col.06)
             
     )
     #edit labels on the x-axis
@@ -1163,33 +1134,33 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     #edit labels on the y-axis
     axis(side=2, at=seq(8, 50, by = 2), las=1, pos=0.1)
     #estimate a model for each STD subset incl below LOQ
-    sbs.amp$x <- sbs.amp$Quantitycopies
-    sbs.amp$y<- sbs.amp$CtdRn
+    df_F03$x <- df_F03$Quantitycopies
+    df_F03$y<- df_F03$CtdRn
     # calculate the log10 for for the Quantitycopies
-    sbs.amp$log10x <- log10(sbs.amp$Quantitycopies)
+    df_F03$log10x <- log10(df_F03$Quantitycopies)
     #estimate a linear model 
-    logEst.amp_STD <- lm(y~log(x),sbs.amp)
+    logEst.amp_STD <- lm(y~log(x),df_F03)
     # calculate the log10 for for the Quantitycopies
-    sbs.amp$log10x <- log10(sbs.amp$Quantitycopies)
+    df_F03$log10x <- log10(df_F03$Quantitycopies)
     #estimate a linear model 
-    logEst.amp_STD <- lm(y~log(x),sbs.amp)
+    logEst.amp_STD <- lm(y~log(x),df_F03)
     #estimate a linear model for the log10 values
     # to get the slope
-    log10xEst.amp_STD <- lm(y~log10x,sbs.amp)
+    log10xEst.amp_STD <- lm(y~log10x,df_F03)
     #estimate a model for each STD subset incl below LOQ
-    sbs.amp$x <- sbs.amp$Quantitycopies
-    sbs.amp$y<- sbs.amp$CtdRn
-    logEst.amp_STD <- lm(y~log(x),sbs.amp)
+    df_F03$x <- df_F03$Quantitycopies
+    df_F03$y<- df_F03$CtdRn
+    logEst.amp_STD <- lm(y~log(x),df_F03)
     
     #add log regresion lines to the plot
     with(as.list(coef(logEst.amp_STD)),
          curve(`(Intercept)`+`log(x)`*log(x),add=TRUE,
                lty=1))
     #estimate a model for each STD subset for dilution steps above LOQ
-    ab.loq.sbs.amp<-zh # get the previously limited dataframe from identifying LOQ
-    ab.loq.sbs.amp$x <- ab.loq.sbs.amp$Quantitycopies
-    ab.loq.sbs.amp$y<- ab.loq.sbs.amp$CtdRn
-    logEst.abloqamp_STD <- lm(y~log(x),ab.loq.sbs.amp) #make a linear model
+    ab.loq.df_F03<-zh # get the previously limited dataframe from identifying LOQ
+    ab.loq.df_F03$x <- ab.loq.df_F03$Quantitycopies
+    ab.loq.df_F03$y<- ab.loq.df_F03$CtdRn
+    logEst.abloqamp_STD <- lm(y~log(x),ab.loq.df_F03) #make a linear model
     
     #get the slope to calculate the efficiency
     slo1 <- log10xEst.amp_STD$coefficients[2]
@@ -1237,11 +1208,11 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     lines(newx,prd2logEst.abloqamp_STD[,3],col="red",lty=2)
     # add a legend for colors on points
     legend(1e+7*0.5,49,
-           unique(sbs.amp$WellType),
+           unique(df_F03$WellType),
            pch=c(24),
            bg="white",
            #NOTE!! the hex color numbers must be read as characters to translate into hex colors
-           pt.bg = as.character(unique(sbs.amp$col.06)),
+           pt.bg = as.character(unique(df_F03$col.06)),
            y.intersp= 0.7, cex=0.9)
     # add a second legend for types of regression lines
     legend(1000,49,
@@ -1254,7 +1225,7 @@ for(i in 1:ncol(txrf02)) {       # for-loop over columns
     # add a third legend for efficiency and R2
     legend(1e+7*0.5,28,
            c(paste("efficiency: ",rEffic," %",sep=""),
-             paste("R2: ",rcor_sbs02,sep=""),
+             paste("R2: ",rcor_df_F06,sep=""),
              paste("equation: y=",slo3,"log(x) +",intc3,sep=""),
              paste("Highest Cq at LOD: ",mx.Cq.lod)),
            #pch=c(24), #uncomment to get triangles on the line in the legend
