@@ -287,3 +287,63 @@ X,Well,Well.Type,Replicate,Threshold..dRn.,Ct..dRn.,Quantity..copies.,RSq..dRn.,
 94,H10,Unknown,24,0.1317,No Ct,No Ct,0.997,-3.604,qPCR0898,NorskFiskeeDNA,AssID00,Esoluc,plate03,mxpro,qpcrrundate20210927 - Text Report Data,24,NEK,3uL
 95,H11,Unknown,24,0.1317,No Ct,No Ct,0.997,-3.604,qPCR0898,NorskFiskeeDNA,AssID00,Esoluc,plate03,mxpro,qpcrrundate20210927 - Text Report Data,24,NEK,3uL
 96,H12,Unknown,24,0.1317,No Ct,No Ct,0.997,-3.604,qPCR0898,NorskFiskeeDNA,AssID00,Esoluc,plate03,mxpro,qpcrrundate20210927 - Text Report Data,24,NEK,3uL
+1,A1,Standard,1,0.0599,23.05,3.00e+004,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,01,3E4,3uL
+2,A2,Standard,1,0.0599,23.12,3.00e+004,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,01,3E4,3uL
+3,A3,Standard,1,0.0599,22.49,3.00e+004,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,01,3E4,3uL
+4,B1,Standard,2,0.0599,26.49,3.00e+003,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,02,3E3,3uL
+5,B2,Standard,2,0.0599,26.27,3.00e+003,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,02,3E3,3uL
+6,B3,Standard,2,0.0599,26.22,3.00e+003,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,02,3E3,3uL
+7,C1,Standard,3,0.0599,29.87,3.00e+002,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,03,3E2,3uL
+8,C2,Standard,3,0.0599,29.75,3.00e+002,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,03,3E2,3uL
+9,C3,Standard,3,0.0599,29.85,3.00e+002,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,03,3E2,3uL
+10,D1,Standard,4,0.0599,33.33,3.00e+001,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,04,3E1,3uL
+11,D2,Standard,4,0.0599,33.17,3.00e+001,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,04,3E1,3uL
+12,D3,Standard,4,0.0599,33.49,3.00e+001,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,04,3E1,3uL
+13,E1,Standard,5,0.0599,38.87,3.00e+000,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,05,3E0,3uL
+14,E2,Standard,5,0.0599,35.99,3.00e+000,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,05,3E0,3uL
+15,E3,Standard,5,0.0599,36.64,3.00e+000,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,05,3E0,3uL
+16,F1,Standard,6,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,06,3E-1,3uL
+17,F2,Standard,6,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,06,3E-1,3uL
+18,F3,Standard,6,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,06,3E-1,3uL
+19,G1,Standard,7,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,07,3E-2,3uL
+20,G2,Standard,7,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,07,3E-2,3uL
+21,G3,Standard,7,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,07,3E-2,3uL
+22,H1,NTC,8,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,08,NTC,3uL
+23,H2,NTC,8,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,08,NTC,3uL
+24,H3,NTC,8,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,08,NTC,3uL
+25,A4,Unknown,9,0.0599,25.19,6.348e+003,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,09,FNE035,3uL
+26,A5,Unknown,9,0.0599,25.62,4.820e+003,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,09,FNE035,3uL
+27,A6,Unknown,9,0.0599,25.31,5.890e+003,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,09,FNE035,3uL
+28,B4,Unknown,10,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,10,FNE036,3uL
+29,B5,Unknown,10,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,10,FNE036,3uL
+30,B6,Unknown,10,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,10,FNE036,3uL
+31,C4,Unknown,11,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,11,FNE037,3uL
+32,C5,Unknown,11,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,11,FNE037,3uL
+33,C6,Unknown,11,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,11,FNE037,3uL
+34,D4,Unknown,12,0.0599,38.51,1.15,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,12,FNE038,3uL
+35,D5,Unknown,12,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,12,FNE038,3uL
+36,D6,Unknown,12,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,12,FNE038,3uL
+37,E4,Unknown,13,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,13,FNE039,3uL
+38,E5,Unknown,13,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,13,FNE039,3uL
+39,E6,Unknown,13,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,13,FNE039,3uL
+40,F4,Unknown,14,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,14,FNE040,3uL
+41,F5,Unknown,14,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,14,FNE040,3uL
+42,F6,Unknown,14,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,14,FNE040,3uL
+43,G4,Unknown,15,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,15,FNE041,3uL
+44,G5,Unknown,15,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,15,FNE041,3uL
+45,G6,Unknown,15,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,15,FNE041,3uL
+46,H4,Unknown,16,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,16,NEK,3uL
+47,H5,Unknown,16,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,16,NEK,3uL
+48,H6,Unknown,16,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,16,NEK,3uL
+49,A7,Unknown,17,0.0599,37.14,2.78,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,17,FNE013.02,3uL
+50,A8,Unknown,17,0.0599,37.15,2.76,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,17,FNE013.02,3uL
+51,A9,Unknown,17,0.0599,35.73,6.92,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,17,FNE013.02,3uL
+52,A10,Unknown,17,0.0599,36.80,3.45,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,17,FNE013.02,3uL
+53,A11,Unknown,17,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,17,FNE013.02,3uL
+54,A12,Unknown,17,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,17,FNE013.02,3uL
+55,B7,Unknown,18,0.0599,34.93,1.163e+001,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,18,FNE014.02,3uL
+56,B8,Unknown,18,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,18,FNE014.02,3uL
+57,B9,Unknown,18,0.0599,39.95,4.501e-001,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,18,FNE014.02,3uL
+58,B10,Unknown,18,0.0599,37.62,2.04,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,18,FNE014.02,3uL
+59,B11,Unknown,18,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,18,FNE014.02,3uL
+60,B12,Unknown,18,0.0599,No Ct,No Ct,0.987,-3.557,qPCR0900,NorskFiskeeDNA,AssID00,Esoluc,plate04,mxpro,qpcrrundate20210929 - Text Report Data,18,FNE014.02,3uL
