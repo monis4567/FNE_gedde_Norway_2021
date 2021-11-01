@@ -1,0 +1,42 @@
+Prøvenr	Fiksering	Type prøve	Add_protK (uL)	Inkubations_tid (hours)	Inkubationstemp (degrees C)	konc i ng/uL	Note_kommentar01	Note_kommentar02	Note_kommentar03	konc i ng/uL
+1	ATL	Blank	80	12	56	17.1				17.1
+2	ATL	Blank	80	12	56	14.8				14.8
+3	ATL	Blank	80	12	56	12.3				12.3
+4	ATL	Bøtte - konsentrat	80	12	56	9.02				9.02
+5	ATL	Bøtte - konsentrat	80	12	56	8.43				8.43
+6	ATL	Bøtte - konsentrat	80	12	56	6.43				6.43
+7	ATL	Bøtte - konsentrat	0	0.25	75	7.74	Labelled 'RNAgem' on ziplock plastic bag	Antager at der er tilsat RNAgem, og ekstraherer dem som RNAgem prøver med inkubering ved 75 C i 15 minutter og presser eluat igennem Millex GV filter		7.740
+8	ATL	Bøtte - konsentrat	0	0.25	75	7.21	Labelled 'RNAgem' on ziplock plastic bag	Antager at der er tilsat RNAgem, og ekstraherer dem som RNAgem prøver med inkubering ved 75 C i 15 minutter og presser eluat igennem Millex GV filter		7.210
+9	ATL	Bøtte - konsentrat	0	0.25	75	4.58	Labelled 'RNAgem' on ziplock plastic bag	Antager at der er tilsat RNAgem, og ekstraherer dem som RNAgem prøver med inkubering ved 75 C i 15 minutter og presser eluat igennem Millex GV filter		4.580
+10	0.5 RNA	Bøtte - konsentrat	0	0.25	75	0.652				0.652
+11	0.5 RNA	Bøtte - konsentrat	0	0.25	75	0.33				0.330
+12	0.5 RNA	Bøtte - konsentrat	0	0.25	75	0.28				0.280
+13	1.0 RNA	Bøtte - konsentrat	0	0.25	75	0.168			De sidste 0,5 mL kunne ikke presses ign Millex GV 13mm_0.2um syringe filter. I stedet overførte jeg disse 0,5 mL til et ekstra rør: 13_02	0.168
+14	1.0 RNA	Bøtte - konsentrat	0	0.25	75	0.244			De sidste 0,5 mL kunne ikke presses ign Millex GV 13mm_0.2um syringe filter. I stedet overførte jeg disse 0,5 mL til et ekstra rør: 14_02	0.244
+15	1.0 RNA	Bøtte - konsentrat	0	0.25	75	0.376				0.376
+16	ATL	1/100	80	12	56	0.611				0.611
+17	ATL	1/100	80	12	56	0.5411				0.5411
+18	ATL	1/100	80	12	56	0.532				0.532
+19	ATL	1/100	80	12	22	0.524				0.524
+20	ATL	1/100	80	12	22	0.595				0.595
+21	ATL	1/100	80	12	22	0.725				0.725
+22	0.5 RNA	1/100	0	0.25	75	0.077				0.077
+23	0.5 RNA	1/100	0	0.25	75	0.061				0.061
+24	0.5 RNA	1/100	0	0.25	75	0.06				0.060
+25	1.0 RNA	1/100	0	0.25	75	0				0.000
+26	1.0 RNA	1/100	0	0.25	75	0				0.000
+27	1.0 RNA	1/100	0	0.25	75	0				0.000
+30	ATL	1/1000	80	12	56	0.109				0.109
+31	ATL	1/1000	80	12	56	0.121				0.121
+32	ATL	1/1000	80	12	56	0.159				0.159
+33	ATL	1/1000	80	12	22	0.105				0.105
+34	ATL	1/1000	80	12	22	0.121				0.121
+35	ATL	1/1000	80	12	22	0.135				0.135
+36	0.5 RNA	1/1000	0	0.25	75	0				0.000
+37	0.5 RNA	1/1000	0	0.25	75	0				0.000
+38	0.5 RNA	1/1000	0	0.25	75	0				0.000
+39	1.0 RNA	1/1000	0	0.25	75	0			Luer lock proppen på sterivex filteret var ikke fastgjort korrekt ved indsamling. Der var ingen vædske at rtække du af sterivex filteret.	0.000
+40	1.0 RNA	1/1000	0	0.25	75	0				0.000
+41	1.0 RNA	1/1000	0	0.25	75	0				0.000
+13_02	1.0 RNA	Bøtte - konsentrat	0	0.25	75	2.37			Se kommentar til prøve 13 og 14	2.370
+14_02	1.0 RNA	Bøtte - konsentrat	0	0.25	75	3.43			Se kommentar til prøve 13 og 14	3.430

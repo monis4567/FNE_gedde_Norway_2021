@@ -90,6 +90,7 @@ rm(list=ls())
 wd00 <- getwd()
 #wd00 <- "/Users/steenknudsen/Documents/Documents/MS_amphibian_eDNA_assays/MS_suppm_amphibia_eDNA"
 wd00 <- "/home/hal9000/Documents/Documents/NIVA_Ansaettelse_2021/fiske_eDNA_200130/FNE_gedde_Norway_2021"
+wd00 <- "/home/hal9000/FNE_gedde_Norway_2021"
 setwd(wd00)
 #define sub directories
 wd01 <- "supma01_inp_raw_qcpr_txt"
@@ -251,14 +252,25 @@ for (q in ls_qPCRnos)   # for loop start here
     qnumber <- gsub("qPCR","",q)
   #define output file and path
     outfilpth <- paste(wd00_wd04,"/",(paste("stdcrv_",q,".pdf",  sep = "")),sep="")
-    # Exporting PFD files via postscript()           
-    pdf(c(outfilpth)
-        ,width=(1*1.6*8.2677),height=(1*1.6*2*2.9232))
+    outfilpth_png <- paste(wd00_wd04,"/",(paste("stdcrv_",q,".png",  sep = "")),sep="")
+    # # Exporting PFD files via postscript()           
+    # pdf(c(outfilpth)
+    #     ,width=(1*1.6*8.2677),height=(1*1.6*2*2.9232))
+    # #op <- par(mfrow=c(2,2), # set number of panes inside the plot - i.e. c(2,2) would make four panes for plots
+    # op <- par(mfrow=c(1,1), # set number of panes inside the plot - i.e. c(2,2) would make four panes for plots
+    #           oma=c(1,1,0,0), # set outer margin (the margin around the combined plot area) - higher numbers increase the number of lines
+    #           mar=c(5,5,5,5) # set the margin around each individual plot 
+    # )
+    # Exporting PNG files via postscript()          
+    png(c(outfilpth_png)
+    )
+        #,width=(1*1.6*8.2677),height=(1*1.6*2*2.9232))
     #op <- par(mfrow=c(2,2), # set number of panes inside the plot - i.e. c(2,2) would make four panes for plots
     op <- par(mfrow=c(1,1), # set number of panes inside the plot - i.e. c(2,2) would make four panes for plots
               oma=c(1,1,0,0), # set outer margin (the margin around the combined plot area) - higher numbers increase the number of lines
               mar=c(5,5,5,5) # set the margin around each individual plot 
     )
+    
     #subset based on variable values, subset by species name and by season
     df_F03 <- df_F02[ which(df_F02$qPCRno==q), ]
     #subset to exclude NAs monitored

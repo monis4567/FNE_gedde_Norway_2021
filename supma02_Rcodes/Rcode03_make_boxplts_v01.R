@@ -90,6 +90,7 @@ rm(list=ls())
 wd00 <- getwd()
 #wd00 <- "/Users/steenknudsen/Documents/Documents/MS_amphibian_eDNA_assays/MS_suppm_amphibia_eDNA"
 wd00 <- "/home/hal9000/Documents/Documents/NIVA_Ansaettelse_2021/fiske_eDNA_200130/FNE_gedde_Norway_2021"
+wd00 <- "/home/hal9000/FNE_gedde_Norway_2021"
 setwd(wd00)
 #define sub directories
 wd01 <- "supma01_inp_raw_qcpr_txt"
@@ -113,7 +114,14 @@ dir.create(wd00_wd05)
 #define in file and path
 infile03_pth <- paste(wd00_wd04,"/","df_w_all_qpcr_runs.csv",sep="")
 #read in file
-df_F07 <- read.table(infile03_pth, header = TRUE, stringsAsFactors = TRUE,fill = TRUE,sep=";")
+df_F07 <- read.table(infile03_pth, header = TRUE, 
+                     stringsAsFactors = TRUE,fill = TRUE,sep=";")
+#define path and file with concentration measurements
+infile04_pth <- paste0(wd00,"/table01_conc_measurements_on_Extractions.txt")
+#read in file
+df_c01 <- read.table(infile04_pth, header = TRUE, 
+                     stringsAsFactors = TRUE,fill = TRUE,sep="\t")
+
 
 #read in packages for making plots
 library(ggplot2)
@@ -149,7 +157,7 @@ p01 = ggplot(df_F08, aes(x=smplno2, y=Quant_cop_l10)) +
   # ))+
   coord_flip() +
   labs(title="Not Jittered")
-p01
+#p01
 
 #adjust tick labels
 #http://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels
@@ -163,7 +171,7 @@ p01a <- p01 + theme(axis.text.x = element_text(face="plain", color="black",
 p01t <- p01a + labs(title = "qPCR on eDNA from Esox lucius")#,
 #change axis labels
 p01t <- p01t + xlab("sample no") + ylab("log10(eDNA copy number per reaction)")
-p01t
+#p01t
 
 library(gridExtra)
 #getwd()
@@ -176,3 +184,42 @@ if(bSaveFigures==T){
 }
 
 #
+#_____________________________________________________________________________
+# Compare concentrations measured after extractions with eDNA levels
+#_____________________________________________________________________________
+
+colnames(df_c01) <- gsub("ø","oe",colnames(df_c01))
+
+df_c01$Proevenr2 <- as.numeric(as.character(df_c01$Proevenr))
+df_c01$Proevenr3 <- sprintf("%03d",df_c01$Proevenr2)
+#edit sample names in concentration file
+df_c01$FNEno <- gsub("^(.*)","FNE\\1",df_c01$Proevenr3)
+
+#colnames(df_F08)
+df_F08$konc.i.ng.uL <-df_c01$konc.i.ng.uL[match(as.character(df_F08$smplno2), df_c01$FNEno)]
+is.na(df_F08$konc.i.ng.uL) <- 0
+df_F08$Fixated_tp.Typesmpl <- paste(df_F08$Fixated_tp,df_F08$Typesmpl,sep=".")
+#
+df_F08$konc.i.ng.uL[grepl("RNA",df_F08$Fixated_tp.Typesmpl)]
+
+#colnames(df_F07)
+p <- ggplot(df_F08,aes(x=konc.i.ng.uL,
+                       y=Quant_cop_l10,
+                       col=Fixated_tp.Typesmpl)) + 
+          geom_point(size=3)
+#p
+
+# Add titles
+# see this example: https://www.datanovia.com/en/blog/ggplot-title-subtitle-and-caption/
+p02t <- p + labs(title = "qPCR on eDNA from Esox lucius nad conc on extractions")#,
+#change axis labels
+p02t <- p02t + xlab("conc. in extraction (ng/uL)") + ylab("log10(eDNA copy number per reaction)")
+#p02t
+#getwd()
+outfil02 <- paste(wd00_wd05,"/","qPCR_on_Esox_lucius_w_conc.png",sep="")
+#also save teh second plot
+bSaveFigures=T
+if(bSaveFigures==T){
+  ggsave(p02t,file=outfil02,width=210,height=297,
+         units="mm",dpi=300)
+}
